@@ -1,0 +1,22 @@
+function isPalindromeRecursive(word) {
+    // Base case: an empty word or single-character word is a palindrome
+    if (word.length <= 1) {
+        return true;
+    }
+    
+    // Compare the first and last characters
+    if (word[0] !== word[word.length - 1]) {
+        return false;
+    }
+    
+    // Recursively check the rest of the word (excluding the first and last characters)
+    return isPalindromeRecursive(word.substring(1, word.length - 1));
+}
+
+// Test cases
+console.log(isPalindromeRecursive("gag"));     // true
+console.log(isPalindromeRecursive("kayak"));   // true
+console.log(isPalindromeRecursive("php"));     // true
+console.log(isPalindromeRecursive("radar"));   // true
+console.log(isPalindromeRecursive("hello"));   // false
+console.log(isPalindromeRecursive("World"));   // false
